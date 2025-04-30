@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongo-app
+spec:
+  containers:
+    - name: app
+      image: busybox
+      command: [ "sh", "-c", "echo Mongo URI: $MONGO_URI && sleep 3600" ]
+      env:
+        - name: MONGO_URI
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: uri
