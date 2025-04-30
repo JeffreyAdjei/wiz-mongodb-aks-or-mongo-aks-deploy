@@ -1,0 +1,1 @@
+# wiz-mongodb-aks-or-mongo-aks-deploy
